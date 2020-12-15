@@ -1,3 +1,5 @@
+# Time Complexity : O(n)
+
 def is_sum_present(list_of_numbers, k):
 
     s = set()
@@ -10,3 +12,5 @@ def is_sum_present(list_of_numbers, k):
             return true
             
         s.add(list_of_numbers[i])
+        
+        
