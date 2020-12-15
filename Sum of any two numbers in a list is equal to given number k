@@ -1,0 +1,12 @@
+def is_sum_present(list_of_numbers, k):
+
+    s = set()
+    
+    for i in range(0, len(list_of_numbers)):
+        
+        temp = k - list_of_numbers[i]
+        
+        if (temp in s):
+            return true
+            
+        s.add(list_of_numbers[i])
