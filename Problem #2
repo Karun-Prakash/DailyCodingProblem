@@ -1,0 +1,34 @@
+#Given an array of integers, return a new array such that each element at index i of the new array is 
+#the product of all the numbers in the original array except the one at i.
+
+#Solution
+
+def solveQuestion(my_list):
+  n = len(my_list)
+  result = 1
+  new_list = []
+  
+  for x in my_list:
+    result = result*x
+  
+  for i in range(0,n):
+    new_list.append( result/my_list[i] )
+  
+  return new_list
+  
+# if no division is allowed
+
+def solveWithoutDivision(my_list):
+  n = len(my_list)
+  prod_of_left = [1]
+  prod_of_right = [1]
+  i=1
+  
+  while(i < n):
+    prod_of_left.append( my_list[i-1]*prod_of_left[i-1] )
+    prod_of_right.insert( 0, my_list[n-i]*prod_of_right[i-1] )
+    
+  for i in range(0,n):
+    my_list[i] = prod_of_left[i]*prod_of_right[i]
+    
+  return my_list
