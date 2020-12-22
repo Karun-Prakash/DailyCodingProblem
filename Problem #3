@@ -2,6 +2,9 @@
 # tree into a string, and deserialize(s), which deserializes the string back into 
 # the tree.
 
+
+my_list=[]
+
 class Node:
   def __init__(self, val, left=None, right=None ):
     self.val = val
@@ -12,15 +15,27 @@ def to_serial(root):
   if(root == None):
     return
   else:
-    my_list.append
-    serialize(root.left)
-    serialize(root.right)
+    my_list.append(root.val)
+    to_serial(root.left)
+    to_serial(root.right)
 
 def serialize(root):
-  my_list = []
+  my_list= []
+  to_serial(root)
+  s= ' '.join(my_list)
+  return s
   
-  
+def to_deserial(data):
+  root_data = data.pop(0)
+  if(root_data):
+    root = Node(root_data)
+    root.left(to_deserial(data))
+    root.right(to_deserial(data))
+    return root
+
 def deserialize(s):
+  my_list= s.split(" ")
+  return to_deserial(my_list)
   
 
 if __name__ == "__main__":
