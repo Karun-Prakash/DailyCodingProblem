@@ -4,9 +4,9 @@ You can assume that the messages are decodable. For example, '001' is not allowe
 
 package com.company;
 import org.jetbrains.annotations.Contract;
-class DCP_7
+class DecodeCount
 {
-    static int countDecodingDP(char digits[], int n)
+    static int numberOfWays(char digits[], int n)
     {
         int count[] = new int[n + 1];
         count[0] = 1;
@@ -40,7 +40,7 @@ public class Main {
         {
             char digits[] = {'1','1','1'};
             int n = digits.length;
-            System.out.println(DCP_7.countDecodingDP(digits, n));
+            System.out.println(DecodeCount.numberOfWays(digits, n));
         }
 
 
